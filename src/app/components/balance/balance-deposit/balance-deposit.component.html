@@ -1,0 +1,22 @@
+<div class="dashboard-header">
+    <div class="container">
+        <h5 class="user">User Management</h5>
+    </div>
+</div>
+<div class="container img-thumbnail" *ngIf="user">
+    <h6 class="text-center">Deposit Money</h6>
+    <div class="container">
+        <p class="enter">User Details</p>
+        <hr>
+        <form #depistMoneyForm ="ngForm" (ngSubmit)="depositMoney()" >
+            <div class="row">
+                <div class="col-lg-6">
+                    <p class="idk">How much?</p>
+                    <input #money="ngModel" [(ngModel)]="user.money" 
+                    class="adhar-input" type="number" name="money" placeholder="money" min="0">
+                </div>
+            </div>
+            <button class="btn btn-sm btn-block" type="submit">Deposit</button>
+        </form>
+    </div>
+</div>

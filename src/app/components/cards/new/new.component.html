@@ -1,0 +1,29 @@
+<div class="dashboard-header">
+    <div class="container">
+        <h5 class="user" [routerLink]="['/cards']">New Card </h5>
+    </div>
+</div>
+<div class="container img-thumbnail">
+    <h6 class="text-center">Add New Card</h6>
+    <div class="container">
+        <p class="enter">Enter Details</p>
+        <hr>
+        <form #newCardForm="ngForm"  (ngSubmit)="saveCard(newCardForm)">
+            <p class="idk">Name on Card</p>
+            <input #name="ngModel" [(ngModel)]="card.name"
+            class="adhar-input" type="text" name="name" placeholder="name on card">
+            <p class="idk">Card Number</p>
+            <input #cardNumber="ngModel" [(ngModel)]="card.cardNumber" pattern="/^\d{1,16}$/"         
+            class="adhar-input" type="text" name="cardNumber" placeholder="card number">
+            <p class="idk">Expiry Date</p>
+            <input #expMonth="ngModel" [(ngModel)]="card.expMonth"
+            class="adhar-input" type="number" name="expMonth" placeholder="month" min="01" max="12">
+            <input #expYear="ngModel" [(ngModel)]="card.expYear"
+            class="adhar-input" type="number" name="expYear" placeholder="year" min="2020" max="9999">
+            <p class="idk">CVV</p>
+            <input #cvc="ngModel" [(ngModel)]="card.cvc"
+            class="adhar-input" type="number" name="cvv" placeholder="cvv" min="100" max="999">
+            <button class="btn btn-block" type="submit">Save</button>
+        </form>
+    </div>
+</div>

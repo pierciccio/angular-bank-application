@@ -1,0 +1,35 @@
+<div class="dashboard-header">
+    <div class="container">
+        <h5 class="user">User Management</h5>
+    </div>
+</div>
+<div class="container img-thumbnail">
+    <h6 class="text-center">User Update</h6>
+    <div class="container">
+        <p class="enter">User Details</p>
+        <hr>
+        <form #userEditForm ="ngForm" (ngSubmit)="updateUser()" >
+            <div class="row">
+                <div class="col-lg-6">
+                    <p class="idk">First Name</p>
+                    <input #firstname="ngModel" [(ngModel)]="user.firstname"
+                    class="adhar-input" type="text" name="firstname" placeholder="firstname">
+                </div>
+                <div class="col-lg-6">
+                    <p class="idk">Last Name</p>
+                    <input #lastname="ngModel" [(ngModel)]="user.lastname"
+                    class="adhar-input" type="text" name="lastname" placeholder="lastname">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="idk">Fiscal Code</p>
+                    <input #fiscalcode="ngModel" [(ngModel)]="user.fiscalcode"
+                    class="adhar-input" type="text" name="fiscalcode" placeholder="fiscalcode">
+                </div>
+            </div>
+            <button class="btn btn-sm btn-block" type="submit">Submit</button>
+        </form>
+    </div>
+
+</div>

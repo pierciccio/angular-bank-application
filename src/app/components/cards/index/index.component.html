@@ -1,0 +1,29 @@
+<div class="dashboard-header">
+    <div class="container" >
+        <h5 class="user">Cards</h5>
+        <a  class="btn btn-primary btn-block"
+        [routerLink]="['/new-card']">Add New Card</a>
+        <hr>
+    </div>
+</div>
+<div class="container img-thumbnail">
+    <h6 class="text-center">Cards Details</h6>
+    <div class="container" *ngFor="let card of cards" >
+        <p class="enter">Choose Your Card </p>
+        <hr>       
+        <ul>
+            <p class="idk">Name on Card</p>
+            <li class="adhar-input">
+                {{card.name}}
+            </li>
+            <p class="idk">Card Number</p>
+            <li class="adhar-input">
+                {{card.cardNumber}}
+            </li>
+        </ul>
+        <a  class="btn btn-primary btn-block"
+        [routerLink]="['/show-card', card._id]">Select</a>
+        <hr>
+    </div>
+</div>
+

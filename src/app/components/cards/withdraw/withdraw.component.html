@@ -1,0 +1,18 @@
+<div class="dashboard-header">
+    <div class="container">
+        <h5 class="user">Withdraw</h5>
+    </div>
+</div>
+<div class="container img-thumbnail" *ngIf="card">
+    <h6 class="text-center">Withdraw</h6>
+    <div class="container">
+        <p class="enter">Enter Amount</p>
+        <hr>
+        <form #withdraw="ngForm" (ngSubmit)="withdrawMoney()">
+            <p class="idk">Amount</p>
+            <input #withdraw="ngModel" [(ngModel)]="card.money"
+            class="adhar-input" type="number" name="money" placeholder="money" min="0">
+            <button class="btn btn-block" type="submit">Withdraw</button>
+        </form>
+    </div>
+</div>

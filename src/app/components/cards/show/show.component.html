@@ -1,0 +1,55 @@
+<div class="dashboard-header" >
+    <div class="container" >
+        <h5 class="user" [routerLink]="['/cards']">Cards</h5>
+    </div>
+</div>
+<div class="container img-thumbnail" *ngIf="card">
+    <h6 class="text-center">Cards Details</h6>
+    <div class="container" >
+            <div class="row" >
+                <div class="col-lg-6">
+                    <h5>Name on Card</h5>
+                    <p>{{card.name}}</p>
+                </div>
+                <div class="col-lg-6">
+                    <h5>Card Number</h5>
+                    <p>{{card.cardNumber}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h5>Expiry Date</h5>
+                    <p>{{card.expMonth + '/' + card.expYear}}</p>
+                </div>
+                <div class="col-lg-6">
+                    <h5>CVV</h5>
+                    <p>{{card.cvc}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h5>Money in the Card</h5>
+                    <p>{{card.money}} €</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <a [routerLink]="['/card-withdraw', card._id]"  class="btn btn-dark">withdraw</a>
+                </div>
+                <div class="col-lg-3">
+                    <a [routerLink]="['/card-deposit', card._id]" class="btn btn-success">deposit</a>
+                </div>
+                <div class="col-lg-3">
+                    <a [routerLink]="['/card-transact', card._id]"  class="btn btn-info">Transact</a>
+                </div>
+                <div class="col-lg-3">
+                    <div class="btn-hehe">
+                            <form style="display: inline" >
+                                <button class="btn btn-danger" (click)="deleteCard(card._id)">Delete</button>
+                            </form>
+                    </div>
+                    
+                </div>
+            </div>
+    </div>
+</div>

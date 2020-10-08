@@ -1,0 +1,32 @@
+<div class="dashboard-header" *ngIf="user">
+    <div class="container">
+        <h5 class="user">{{user.firstname}}'s Dashboard</h5>
+    </div>
+</div>
+
+<div *ngIf="user" class="container img-thumbnail">
+    
+    <p class="text-left">
+        <strong>Welcome {{user.firstname + ' ' + user.lastname}} , your Iban is: {{user.iban}}  
+            <span style="font-size: 20px;"></span> <br><br>
+            Your current total Balance is: {{user.money}} € <br>
+            <span style="font-size: 20px;"></span>
+            Your future Balance will be: {{user.money + (user.money*0.02)}} €
+            <span style="font-size: 20px;"></span>
+        </strong>
+    </p>
+    <p>Internet Banking System - Users Dashboard</p>
+    <div class="container">
+        <a [routerLink]="['/balance-deposit']">Deposit Money</a>
+        <a [routerLink]="['/balance-withdraw']">Withdraw Money</a>
+        <a [routerLink]="['/balance-transact']">Transact Money</a>
+        <a [routerLink]="['/user-edit']">Update Your Account</a>
+        <a [routerLink]="['/cards']">Show all Cards</a>
+        <a [routerLink]="['/new-card']">Add new Card</a>             
+    </div>
+
+</div>
+
+<div class="container img-thumbnail" *ngIf="!user">
+    <p>NO USER</p>
+</div>

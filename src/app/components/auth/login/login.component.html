@@ -1,0 +1,25 @@
+
+<div class="dashboard-header">
+    <div class="container">
+        <h5 class="user">Login</h5>
+    </div>
+</div>
+<div class="container img-thumbnail">
+    <h6 class="text-center">Login</h6>
+    <div class="container">
+        <p class="enter">Enter Your Credentials</p>
+        <hr>
+        <form #loginForm="ngForm" (ngSubmit)="login()">
+            <p class="idk">Email</p>
+            <input #email="ngModel" [(ngModel)]="user.email"
+            class="adhar-input" type="email" name="email" placeholder="email">
+            <p class="idk">Password</p>
+            <input #password="ngModel" [(ngModel)]="user.password"
+            class="adhar-input" type="password" name="password" placeholder="password">
+
+            <button type="submit" class="btn btn-sm btn-block">Login</button>
+            <p class="text-right"><a href="/forgot">Forgot Password?</a></p>
+        </form>
+    </div>
+
+</div>

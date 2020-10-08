@@ -1,0 +1,21 @@
+<div class="dashboard-header">
+    <div class="container">
+        <h5 class="user">Transact</h5>
+    </div>
+</div>
+<div class="container img-thumbnail" *ngIf="cards">
+    <h6 class="text-center">Transact</h6>
+    <div class="container">
+        <p class="enter">Enter Details</p>
+        <hr>
+        <form #depositForm="ngForm" (ngSubmit)="transactMoney()">
+            <p class="idk">Amount</p>
+            <input #money="ngModel" [(ngModel)]="card.money"
+            class="adhar-input" type="number" name="money" placeholder="money to tarnsfer" min="0">
+            <p class="idk">Card Number</p>
+            <input #cardNumber="ngModel" [(ngModel)]="card.cardNumber"
+            class="adhar-input" type="text" name="cardNumber" placeholder="card Number">
+            <button class="btn btn-block" type="submit">Transact</button>
+        </form>
+    </div>
+</div>
